@@ -1,4 +1,4 @@
-#include <exception>
+#include <stdexcept>
 
 template <typename T> void Process(const T& t) {}
 
@@ -6,7 +6,7 @@ struct VoidParam {};
 
 inline void Process(const VoidParam&) 
 {
-    throw std::exception("'void' parameter is not allowed");
+    throw std::invalid_argument("'void' parameter is not allowed");
 }
 
 template <typename T>
